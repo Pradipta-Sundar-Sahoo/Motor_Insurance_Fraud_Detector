@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Motor_Insurance_Fraud_Detector</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="months_as_customer" placeholder="months_as_customer" required="required" /><br>
+        <input type="text" name="policy_deductable" placeholder="policy_deductable" required="required" /><br>
+        <input type="text" name="umbrella_limit" placeholder="umbrella_limit" required="required" /><br>
+        <input type="text" name="capital-gains" placeholder="capital-gains" required="required" /><br>
+        <input type="text" name="capital-loss" placeholder="capital-loss" required="required" /><br>
+        <input type="text" name="incident_hour_of_the_day" placeholder="incident_hour_of_the_day" required="required" /><br>
+        <input type="text" name="number_of_vehicles_involved" placeholder="number_of_vehicles_involved" required="required" /><br>
+        <input type="text" name="bodily_injuries" placeholder="bodily_injuries" required="required" /><br>
+        <input type="text" name="witnesses" placeholder="witnesses" required="required" /><br>
+        <input type="text" name="injury_claim" placeholder="injury_claim" required="required" /><br>
+        <input type="text" name="property_claim" placeholder="property_claim" required="required" /><br>
+        <input type="text" name="vehicle_claim" placeholder="vehicle_claim" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
